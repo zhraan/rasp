@@ -1,0 +1,218 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riwayat Data Hasil Sortasi - v12 Design</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+    body {
+      background-color: #28a745;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container-v12 {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(40, 167, 69, 0.4);
+      padding: 2rem 2.5rem 1rem 2.5rem;
+      margin: 2rem auto;
+      max-width: 960px;
+    }
+    .title-main {
+      color: #28a745;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      border-bottom: 4px solid #198754;
+      padding-bottom: 0.5rem;
+    }
+    .divider-line {
+      border-top: 1px solid #e0e0e0;
+      margin: 0 0 1rem 0;
+    }
+    .title-sub {
+      color: #28a745;
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    thead tr {
+      background-color: #28a745;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    thead th {
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.3);
+      user-select: none;
+    }
+    tbody tr {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    tbody td {
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #333;
+      border: 1px solid #dee2e6;
+      word-wrap: break-word;
+    }
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+    .delete-column {
+      text-align: center;
+      width: 60px;
+    }
+    @media (max-width: 768px) {
+      .container-v12 {
+        padding: 1rem 1.25rem 0.5rem 1.25rem;
+        margin: 1rem;
+      }
+      .title-main {
+        font-size: 1.5rem;
+      }
+      .title-sub {
+        font-size: 1.25rem;
+      }
+      thead th, tbody td {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container container-v12">
+    <h1 class="title-main">Riwayat Data Hasil Sortasi</h1>
+    <hr class="divider-line" />
+    <!-- <h2 class="title-sub">Riwayat Data Hasil Sortasi</h2> -->
+    <div class="d-flex justify-content-between mb-3">
+      <div>
+        <a href="/" class="btn btn-outline-success btn-sm">← Kembali ke Halaman Utama</a>
+      </div>
+      <div>
+        <button id="toggle-delete" class="btn btn-danger btn-sm">Hapus Data</button>
+        <button id="delete-selected" class="btn btn-warning btn-sm ms-2 d-none">Konfirmasi Hapus</button>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">NO</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Mulai</th>
+            <th scope="col">Selesai</th>
+            <th scope="col">Durasi</th>
+            <th scope="col">Super</th>
+            <th scope="col">Kelas A</th>
+            <th scope="col">Kelas B</th>
+            <th scope="col">Rusak</th>
+            <th scope="col">Total</th>
+            <th scope="col" class="delete-column d-none">Pilih</th>
+          </tr>
+        </thead>
+        <tbody id="riwayat-body">
+          <!-- Example empty rows with borders -->
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  fetch("/api/riwayat")
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.getElementById("riwayat-body");
+      tbody.innerHTML = "";
+      data.forEach((item, index) => {
+        tbody.innerHTML += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${item.tanggal}</td>
+          <td>${item.mulai}</td>
+          <td>${item.selesai}</td>
+          <td>${item.durasi}</td>
+          <td>${item.kelas_super}</td>
+          <td>${item.kelas_a}</td>
+          <td>${item.kelas_b}</td>
+          <td>${item.rusak}</td>
+          <td>${item.total}</td>
+          <td class="delete-column d-none">
+            <input type="checkbox" class="row-check" data-id="${item._id}" />
+          </td>
+        </tr>
+      `;
+      });
+    });
+
+  const toggleBtn = document.getElementById('toggle-delete');
+  const confirmBtn = document.getElementById('delete-selected');
+
+  toggleBtn.addEventListener('click', () => {
+    const columns = document.querySelectorAll('.delete-column');
+    const visible = columns[0].classList.contains('d-none');
+
+    columns.forEach(col => {
+      if (visible) col.classList.remove('d-none');
+      else col.classList.add('d-none');
+    });
+
+    confirmBtn.classList.toggle('d-none');
+    toggleBtn.textContent = visible ? 'Batalkan' : 'Hapus Data';
+  });
+
+  confirmBtn.addEventListener('click', () => {
+    const selected = Array.from(document.querySelectorAll('.row-check:checked'));
+    if (selected.length === 0) {
+      alert("Pilih data yang ingin dihapus.");
+      return;
+    }
+
+    const ids = selected.map(cb => cb.dataset.id);
+    if (confirm(`Yakin ingin menghapus ${ids.length} data?`)) {
+      fetch('/api/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids })
+      })
+      .then(res => res.json())
+      .then(res => {
+        alert("Data berhasil dihapus.");
+        window.location.reload();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Gagal menghapus data.");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
