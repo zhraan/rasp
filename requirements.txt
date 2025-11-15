@@ -1,0 +1,11 @@
+opencv-python
+numpy
+ultralytics
+picamera2
+adafruit-circuitpython-pca9685
+adafruit-circuitpython-motor
+adafruit-blinka
+busio
+board
+pymongo
+RPi.GPIO
