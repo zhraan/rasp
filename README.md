@@ -51,10 +51,10 @@ git clone https://github.com/zhraan/Fruit_sorting_system.git
 cd Fruit_sorting_system
 ```
 
-### Create virtual environment
+### Create virtual environment with access system package (--system-site-packages)
 ```bash
 python3 -m venv env
-source env/bin/activate
+source env/bin/activate --system-site-packages
 ```
 
 ### Install dependencies
