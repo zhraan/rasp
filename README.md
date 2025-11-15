@@ -61,6 +61,18 @@ source env/bin/activate --system-site-packages
 ```bash
 pip install -r requirements.txt
 ```
+Some libraries cannot be installed via pip and must be installed using APT.
+
+#### Install Picamera2:
+```bash
+sudo apt update
+sudo apt install -y python3-picamera2
+```
+
+#### Install GPIO library:
+```bash
+sudo apt install -y python3-rpi.gpio
+```
 ### Before running
 - Enable camera:
 ```bash
