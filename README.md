@@ -1,7 +1,6 @@
 # Fruit Sorting System
 
-A simple prototype of an automated fruit sorting device using Raspberry Pi, a camera module, and a machine learning model.  
-The system captures fruit images, classifies them using a trained TFlite model, and moves fruits to the correct output using stepper motors.
+A simple prototype of an automated fruit sorting device using Raspberry Pi, a camera module, and a machine learning model. The system captures fruit images, classifies them using a trained TFlite model, and moves fruits to the correct output using stepper motors.
 
 ---
 
