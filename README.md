@@ -19,7 +19,7 @@ The system is designed for lightweight edge deployment and real-time operation.
 ## Features
 - Real-time fruit image capture  
 - TFlite-based machine learning inference  
-- Stepper motor sorting mechanism  
+- Stepper motor and servo sorting mechanism  
 - Easy to modify and extend  
 - Sensor integration (ultrasonic or IR)
 
